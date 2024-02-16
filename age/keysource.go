@@ -442,7 +442,6 @@ func parseRecipient(recipient string) (age.Recipient, error) {
 // A single identity argument is allowed to be a multiline string containing
 // multiple identities. Empty lines and lines starting with "#" are ignored.
 func parseIdentities(identity ...string) (ParsedIdentities, error) {
-	log.Warn("parsing identity: %s", identity)
 	var identities []age.Identity
 	for _, i := range identity {
 		parsed, err := _parseIdentities(strings.NewReader(i))
